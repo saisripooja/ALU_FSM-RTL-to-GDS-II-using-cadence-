@@ -1,0 +1,31 @@
+ncsim(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> run
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 38.6M program + 273.8M data = 312.4M total (312.4M Peak)
+ncsim: CPU Usage - 0.2s system + 0.1s user = 0.2s total (57.8s, 0.4% cpu)
+ulator_fsm_tb.reset calculator_fsm_tb.result calculator_fsm_tb.start
+Created probe 1
+ncsim> run
+                             ADD: 13604, 24193 -> 37797
+                             SUB: 54793, 22115 -> 32678
+                             MUL: 31501, 39309 -> 1238272809
+                             DIV: 33893, 16 -> 2118
+                             AND: 21010, 58113 -> 16896
+                              OR: 52493, 61814 -> 64895
+                             XOR: 52541, 22509 -> 39632
+                             NOT: 63372, 0 -> 4294903923
+                             LSL: 59897, 1 -> 119794
+                             LSR: 9414, 1 -> 4707
+                             ASR: 33989, 1 -> 16994
+Simulation complete via $finish(1) at time 225 NS + 0
+./alu_fsm_tb.v:64         $finish;
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 38.6M program + 272.8M data = 311.4M total (315.0M Peak)
+ncsim: CPU Usage - 0.1s system + 0.0s user = 0.2s total (35.4s, 0.4% cpu)

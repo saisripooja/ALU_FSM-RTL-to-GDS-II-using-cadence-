@@ -1,0 +1,374 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Apr 25 14:11:11 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+save_global alu.globals
+set init_gnd_net vss
+set init_lef_file {45nm/dig/lef/gsclib045_tech.lef 45nm/dig/lef/gsclib045_macro.lef}
+set init_verilog alu_fsm_netlist.v
+set init_mmmc_file alu.view
+set init_pwr_net vdd
+init_design
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 1 0.6 6 6 6 6
+uiSetTool select
+getIoFlowFlag
+fit
+clearGlobalNets
+globalNetConnect vdd -type pgpin -pin vdd -instanceBasename * -hierarchicalInstance {}
+globalNetConnect vss -type pgpin -pin vss -instanceBasename * -hierarchicalInstance {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M11 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {vdd vss} -type core_rings -follow core -layer {top M11 bottom M11 left M10 right M10} -width {top 1 bottom 1 left 1 right 1} -spacing {top 1.25 bottom 1.25 left 1.25 right 1.25} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 1 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M11 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {vdd vss} -layer M11 -direction horizontal -width 1 -spacing 1.25 -number_of_sets 6 -start_from bottom -start_offset 1 -stop_offset 1 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M11 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M11 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M11 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {vdd vss} -layer M10 -direction vertical -width 1 -spacing 1.25 -number_of_sets 6 -start_from left -start_offset 1 -stop_offset 1 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M11 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M11 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { M1(1) M11(11) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { M1(1) M11(11) } -nets { vdd vss } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { M1(1) M11(11) }
+addEndCap -preCap FILL8 -postCap FILL8 -prefix ENDCAP
+setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -droutePostRouteSpreadWire 1
+setNanoRouteMode -quiet -droutePostRouteWidenWireRule VLMDefaultSetup
+setNanoRouteMode -quiet -timingEngine {}
+setUsefulSkewMode -noBoundary false -maxAllowedDelay 1
+setPlaceMode -reset
+setPlaceMode -congEffort auto -timingDriven 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 1 -moduleAwareSpare 0 -preserveRouting 1 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setPlaceMode -fp false
+place_design
+setPlaceMode -fp false
+place_design
+setNanoRouteMode -quiet -routeWithTimingDriven 1
+setNanoRouteMode -quiet -routeWithSiDriven 1
+setNanoRouteMode -quiet -routeTopRoutingLayer 11
+setNanoRouteMode -quiet -routeBottomRoutingLayer 1
+setNanoRouteMode -quiet -drouteEndIteration 1
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+routeDesign -globalDetail
+selectInst div_38_50_g24503
+getCTSMode -engine -quiet
+setAnalysisMode -cppr both -clockGatingCheck true -timeBorrowing true -useOutputPinCap true -sequentialConstProp false -timingSelfLoopsNoSkew false -enableMultipleDriveNet true -clkSrcPath true -warn true -usefulSkew false -analysisType bcwc -log true
+get_ccopt_clock_trees
+ccopt_check_and_flatten_ilms_no_restore
+set_ccopt_property cts_is_sdc_clock_root -pin clk true
+create_ccopt_clock_tree -name clk -source clk -no_skew_group
+set_ccopt_property target_max_trans_sdc -delay_corner MIN -early -clock_tree clk 0.200
+set_ccopt_property target_max_trans_sdc -delay_corner MIN -late -clock_tree clk 0.200
+set_ccopt_property source_output_max_trans -delay_corner MIN -early -clock_tree clk 0.100
+set_ccopt_property source_output_max_trans -delay_corner MAX -early -clock_tree clk 0.100
+set_ccopt_property source_output_max_trans -delay_corner MIN -late -clock_tree clk 0.100
+set_ccopt_property source_output_max_trans -delay_corner MAX -late -clock_tree clk 0.100
+set_ccopt_property clock_period -pin clk 12
+set_ccopt_property timing_connectivity_info {}
+create_ccopt_skew_group -name clk/SDC -sources clk -auto_sinks
+set_ccopt_property include_source_latency -skew_group clk/SDC true
+set_ccopt_property extracted_from_clock_name -skew_group clk/SDC clk
+set_ccopt_property extracted_from_constraint_mode_name -skew_group clk/SDC SDC
+set_ccopt_property extracted_from_delay_corners -skew_group clk/SDC {MIN MAX}
+check_ccopt_clock_tree_convergence
+get_ccopt_property auto_design_state_for_ilms
+getCTSMode -engine -quiet
+ctd_win -side none -id ctd_window
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -early > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getFillerMode -quiet
+addFiller -cell FILL32 FILL4 FILL16 FILL8 FILL64 FILL2 FILL1 -prefix FILLER
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -preCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix calculator_fsm_preCTS -outDir timingReports
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -preCTS -hold -pathReports -slackReports -numPaths 50 -prefix calculator_fsm_preCTS -outDir timingReports
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -postCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix calculator_fsm_postCTS -outDir timingReports
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -postCTS -hold -pathReports -slackReports -numPaths 50 -prefix calculator_fsm_postCTS -outDir timingReports
+setLayerPreference node_layer -isVisible 0
+setLayerPreference node_layer -isVisible 1
+streamOut alu.gds -libName DesignLib -units 2000 -mode ALL
+zoomBox -45.16200 14.52600 197.39850 134.27100
+zoomBox -11.78300 30.46400 163.46750 116.98000
+zoomBox 1.25300 36.68850 150.21600 110.22700
+setLayerPreference node_layer -isVisible 0
+zoomBox -39.51650 23.69500 166.66050 125.47850
+zoomBox -65.44350 15.43200 177.11800 135.17750
+zoomBox -95.94550 5.71100 189.42100 146.58800
+fit
+setDrawView fplan
+setLayerPreference node_layer -isVisible 1
+checkPlace -ignoreOutOfCore -noPreplaced -macroBlockage calculator_fsm.checkPlace
+setDrawView place
+fit
+setLayerPreference node_layer -isVisible 0
+setLayerPreference node_layer -isVisible 1
+getCTSMode -engine -quiet
+ctd_win -side none -id ctd_window
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -early > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -early > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+setOptMode -fixCap true -fixTran true -fixFanoutLoad false
+optDesign -postCTS
+optDesign -postCTS -hold
+fit
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -early > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+getAnalysisMode -checkType -quiet
+get_time_unit
+report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+load_timing_debug_report -name default_report top.mtarpt -max_path_num 10000 -updateCategory 0
+selectInst FE_RC_63_0
+setLayerPreference node_layer -isVisible 0
+setLayerPreference node_layer -isVisible 1
+setLayerPreference node_layer -isVisible 0
+deselectAll
+selectInst FILLER_T_1_3009
+zoomBox 0.36300 -3.49250 103.72050 122.70650
+zoomBox 2.27600 2.21800 90.13000 109.48700
+zoomBox 3.90200 7.07150 78.57800 98.25050
+zoomBox 5.28350 11.19700 68.75850 88.69950
+zoomBox 6.45850 14.70400 60.41200 80.58100
+zoomBox 7.45700 17.68500 53.31750 73.68050
+zoomBox 8.30550 20.21850 47.28700 67.81500
+zoomBox 9.02700 22.37200 42.16150 62.82900
+getFillerMode -quiet
+addFiller -cell FILL32 FILL4 FILL16 FILL8 FILL64 FILL2 FILL1 -prefix FILLER
+zoomBox -25.80400 -5.24750 48.87350 85.93350
+zoomBox -102.87850 -68.35600 65.42650 137.14350
+fit
+deselectAll
+setLayerPreference node_layer -isVisible 1
+streamOut alu.gds -libName DesignLib -units 2000 -mode ALL
+getMultiCpuUsage -localCpu
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -disable_rules {} -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report calculator_fsm.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+verifyConnectivity -type all -error 1000 -warning 50
+verifyEndCap
+zoomBox 17.23900 24.29250 105.09300 131.56150
+zoomBox 21.31600 32.76200 95.99200 123.94100
+zoomBox 25.19400 38.20750 88.66900 115.71000
+zoomBox 28.49050 42.83650 82.44400 108.71350
+zoomBox 31.29250 46.77100 77.15300 102.76650
+zoomBox 33.67400 50.11550 72.65550 97.71150
+zoomBox 41.11550 60.60450 61.46450 85.45050
+zoomBox 44.86050 65.52050 57.35750 80.77950
+zoomBox 47.70850 69.26000 54.23300 77.22650
+zoomBox 48.90900 70.83650 52.91600 75.72900
+zoomBox 49.43900 71.53250 52.33450 75.06800
+zoomBox 49.64600 71.80400 52.10750 74.80950
+zoomBox 49.75650 72.27200 51.53500 74.44350
+zoomBox 49.79950 72.45450 51.31150 74.30050
+zoomBox 49.81950 72.61250 51.10500 74.18200
+zoomBox 49.83500 72.74850 50.92750 74.08250
+zoomBox 49.84750 72.86400 50.77650 73.99800
+zoomBox 49.85850 72.96200 50.64800 73.92600
+zoomBox 49.87600 73.11650 50.44650 73.81300
+zoomBox 49.86050 72.96350 50.65000 73.92750
+zoomBox 49.85050 72.86600 50.77950 74.00050
+zoomBox 49.85650 73.05900 50.52800 73.87900
+zoomBox 49.85850 73.13450 50.42950 73.83150
+zoomBox 49.86200 73.19850 50.34750 73.79150
+zoomBox 49.86450 73.25350 50.27750 73.75750
+zoomBox 49.86950 73.34000 50.16750 73.70400
+zoomBox 49.87150 73.37350 50.12500 73.68300
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+zoomBox 49.85150 73.32800 50.20300 73.75700
+zoomBox 49.83900 73.29900 50.25250 73.80400
+deselectAll
+selectWire 49.8700 73.5950 50.0150 73.6550 1 MULT_TC_OP_n_241
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+deselectAll
+selectInst MULT_TC_OP_g13531__8428
+deselectAll
+selectWire 49.8700 73.5950 50.0150 73.6550 1 MULT_TC_OP_n_241
+deselectAll
+selectWire 49.8700 73.5950 50.0150 73.6550 1 MULT_TC_OP_n_241
+deselectAll
+selectWire 49.9550 73.5950 50.0150 73.6950 1 MULT_TC_OP_n_241
+deselectAll
+selectWire 49.8700 73.5950 50.0150 73.6550 1 MULT_TC_OP_n_241
+deleteSelectedFromFPlan
+selectInst MULT_TC_OP_g13531__8428
+undo
+deselectAll
+selectInst MULT_TC_OP_g13531__8428
+zoomBox 49.80400 73.24800 50.29100 73.84250
+zoomBox 49.76350 73.18800 50.33650 73.88750
+deselectAll
+selectMarker 49.8600 73.4550 49.9400 73.6650 2 1 25
+zoomBox 49.62650 72.88750 50.72400 74.22750
+zoomBox 49.44650 72.49200 51.23350 74.67400
+zoomBox 49.26700 72.09900 51.74050 75.11900
+zoomBox 48.21300 70.61600 52.24100 75.53400
+zoomBox 46.49700 68.20100 53.05700 76.21050
+zoomBox 44.78950 65.79700 53.86900 76.88300
+zoomBox 40.92300 60.35450 55.70750 78.40650
+zoomBox 37.07450 54.93750 57.53750 79.92250
+zoomBox 34.62700 51.49200 58.70150 80.88700
+zoomBox 28.36000 42.67050 61.68150 83.35600
+zoomBox 14.17000 22.69700 68.42900 88.94700
+zoomBox -8.93550 -9.82650 79.41650 98.05100
+zoomBox -46.55850 -62.78500 97.30800 112.87500
+zoomBox -18.34100 -32.52350 70.01100 75.35400
+zoomBox 6.64000 -5.73150 45.84300 42.13500
+zoomBox 12.16950 0.19800 40.49400 34.78200
+zoomBox 16.16450 4.48250 36.62900 29.46950
+zoomBox 20.17800 8.78700 32.74600 24.13250
+zoomBox 21.13600 9.81450 31.81900 22.85850
+zoomBox 22.67050 11.86150 30.38900 21.28600
+zoomBox 24.21100 13.91800 28.95200 19.70650
+deselectAll
+selectWire 26.2600 17.0550 28.7400 17.1350 3 {A[0]}
+deleteSelectedFromFPlan
+selectMarker 26.2600 17.0550 26.3400 17.2350 2 1 25
+deleteSelectedFromFPlan
+selectWire 26.2600 17.0550 26.3400 17.2350 2 {A[0]}
+deleteSelectedFromFPlan
+undo
+undo
+deselectAll
+selectWire 26.2600 17.0550 26.3400 17.2350 2 {A[0]}
+deleteSelectedFromFPlan
+selectWire 26.2600 17.0550 28.7400 17.1350 3 {A[0]}
+gui_select -rect {26.63850 17.09600 26.69950 17.28800}
+deselectAll
+uiSetTool addWire
+uiSetTool addWire
+uiSetTool addWire
+uiSetTool addWire
+uiSetTool addVia
+uiSetTool addVia
+uiSetTool moveWire
+selectWire 26.2600 17.0550 28.7400 17.1350 3 {A[0]}
+editResize -direction y -offset -0.38 -side high -keep_center_line auto
+selectWire 26.2600 17.0550 28.7400 17.1350 3 {A[0]}
+editResize -direction y -offset 0.11 -side low -keep_center_line auto
+uiSetTool moveWire
+uiSetTool addVia
+zoomBox 24.79950 14.80900 28.22500 18.99150
+zoomBox 25.02900 15.15700 27.94100 18.71250
+zoomBox 25.22450 15.45300 27.69950 18.47500
+zoomBox 25.38400 15.72650 27.48750 18.29500
+zoomBox 25.52300 15.94200 27.31150 18.12550
+zoomBox 25.64150 16.12450 27.16200 17.98100
+zoomBox 25.74200 16.28050 27.03450 17.85850
+editAddVia 26.299 17.1875
+editAddVia 26.3035 17.197
+editAddVia 26.3155 17.0945
+editAddVia 26.3155 17.0945
+uiSetTool addVia
+zoomBox 25.23900 15.18900 27.71500 18.21200
+zoomBox 23.91450 12.39850 29.49550 19.21300
+zoomBox 19.97300 4.25950 34.77250 22.32950
+zoomBox 9.43800 -16.42500 48.67900 31.48800
+zoomBox -19.44550 -69.65500 84.60250 57.38700
+zoomBox 3.72650 -29.72150 58.04050 36.59550
+zoomBox 7.52250 -23.18000 53.68950 33.18950
+zoomBox 10.74900 -17.62000 49.99100 30.29450
+editAddVia 42.475 16.2745
+zoomBox -29.02900 -60.11650 59.41500 47.87300
+fit

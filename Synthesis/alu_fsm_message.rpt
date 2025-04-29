@@ -1,0 +1,14 @@
+  =================
+   Message Summary
+  =================
+--------------------------------------------------------------------------------
+|   Id    |  Sev   |Count |                   Message Text                     |
+--------------------------------------------------------------------------------
+| CFM-1   |Info    |    1 |Wrote dofile.                                       |
+| CFM-5   |Info    |    1 |Wrote formal verification information.              |
+| CPI-506 |Warning |    1 |Command 'commit_power_intent' cannot proceed as     |
+|         |        |      | there is no power intent loaded.                   |
+| MESG-11 |Warning |    3 |Maximum message print count reached.                |
+| RPT-16  |Info    |    1 |Joules engine is used.                              |
+| SYNTH-5 |Info    |    1 |Done mapping.                                       |
+--------------------------------------------------------------------------------
